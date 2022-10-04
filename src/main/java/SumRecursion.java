@@ -12,7 +12,6 @@ public class SumRecursion extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
         if (array.length <= SEQUENT) {
-            System.out.println(Thread.currentThread().getName());
             return Arrays.stream(array).sum();
         } else {
             SumRecursion left = new SumRecursion(Arrays.copyOfRange(array, 0, array.length / 2));
